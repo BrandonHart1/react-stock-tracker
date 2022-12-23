@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
+import './HomeScreen.css';
+
+// ---------- API ----------
 const options = {
   method: 'GET',
   url: 'https://mboum-finance.p.rapidapi.com/qu/quote',
@@ -26,8 +29,10 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <div>
-      <h1>HomeScreen</h1>
+    <div className='home-screen-container'>
+      <div className='title'>
+        <h1>Stock Tracker</h1>
+      </div>
     </div>
   );
 };
