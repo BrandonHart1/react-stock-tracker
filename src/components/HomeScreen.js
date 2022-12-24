@@ -16,7 +16,7 @@ const options = {
 };
 
 const HomeScreen = () => {
-  const [stockQuotes, setStockQuotes] = useState();
+  const [stockQuotes, setStockQuotes] = useState([]);
   useEffect(() => {
     axios
       .request(options)
@@ -25,6 +25,7 @@ const HomeScreen = () => {
       })
       .catch(function (error) {
         console.error(error);
+        console.log(error);
       });
   }, []);
 
@@ -32,6 +33,12 @@ const HomeScreen = () => {
     <div className='home-screen-container'>
       <div className='title'>
         <h1>Stock Tracker</h1>
+      </div>
+      <div className='stock-quote-search'>
+        <h1 className='stock-text'>Search a Stock</h1>
+        <form>
+          <input type='text' placeholder='Search' className='stock-input' />
+        </form>
       </div>
     </div>
   );
